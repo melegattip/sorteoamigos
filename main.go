@@ -17,8 +17,8 @@ func main() {
 	// Configurar el router
 	r := mux.NewRouter()
 	r.Use(corsMiddleware)
-	r.HandleFunc("/people", controller.AddPerson).Methods(http.MethodPost)
-	r.HandleFunc("/grid", controller.GetGrid).Methods(http.MethodGet)
+	r.HandleFunc("sorteoamigos.vercel.app/people", controller.AddPerson).Methods(http.MethodPost)
+	r.HandleFunc("sorteoamigos.vercel.app/grid", controller.GetGrid).Methods(http.MethodGet)
 	// Iniciar el servidor
 	http.ListenAndServe(":8080", r)
 }
